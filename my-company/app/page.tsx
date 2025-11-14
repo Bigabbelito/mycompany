@@ -4,9 +4,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Code2, Rocket, Smartphone, MonitorSmartphone, Sparkles, Server, Mail, CheckCircle2, ArrowRight, Github, Linkedin, Triangle } from "lucide-react";
 
-// A single-file landing page meant for Next.js (App Router). Drop this into app/page.tsx
-// Tailwind CSS recommended. All styles rely on Tailwind utility classes.
-// Animations by framer-motion; icons by lucide-react.
 
 export default function WebDevLandingPage() {
   return (
@@ -29,8 +26,8 @@ export default function WebDevLandingPage() {
 function GradientBackground() {
   return (
     <div aria-hidden className="fixed inset-0 -z-10 overflow-hidden">
-      <div className="absolute -top-32 left-1/2 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-gradient-to-br from-violet-500/20 via-fuchsia-500/20 to-indigo-500/20 blur-3xl" />
-      <div className="absolute bottom-0 right-0 h-[28rem] w-[28rem] translate-x-1/3 translate-y-1/3 rounded-full bg-gradient-to-tr from-blue-400/10 via-cyan-400/10 to-teal-400/10 blur-3xl" />
+      <div className="absolute -top-32 left-1/2 h-160 w-160 -translate-x-1/2 rounded-full bg-linear-to-br from-violet-500/20 via-fuchsia-500/20 to-indigo-500/20 blur-3xl" />
+      <div className="absolute bottom-0 right-0 h-112 w-md translate-x-1/3 translate-y-1/3 rounded-full bg-linear-to-tr from-blue-400/10 via-cyan-400/10 to-teal-400/10 blur-3xl" />
     </div>
   );
 }
@@ -40,7 +37,7 @@ function Header() {
     <header className="sticky top-0 z-40 w-full border-b border-white/10 bg-white/60 backdrop-blur-md dark:bg-gray-950/50">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
         <a href="#home" className="flex items-center gap-2">
-          <div className="grid h-8 w-8 place-items-center rounded-xl bg-gradient-to-br from-indigo-500 to-fuchsia-500 text-white shadow-md">
+          <div className="grid h-8 w-8 place-items-center rounded-xl bg-linear-to-br from-indigo-500 to-fuchsia-500 text-white shadow-md">
             <Code2 className="h-5 w-5" />
           </div>
           <span className="text-lg font-semibold tracking-tight">NovaWeb</span>
@@ -103,14 +100,14 @@ function Hero() {
           </span>
           <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
             Ship beautiful web apps
-            <span className="block bg-gradient-to-r from-indigo-600 to-fuchsia-600 bg-clip-text text-transparent">faster than ever</span>
+            <span className="block bg-linear-to-r from-indigo-600 to-fuchsia-600 bg-clip-text text-transparent">faster than ever</span>
           </h1>
           <p className="mt-5 max-w-xl text-lg text-gray-600 dark:text-gray-300">
-            We build lightning‑fast, accessible, and scalable products using the modern React/Next.js stack.
+            We build lightning fast, accessible, and scalable products using the modern React/Next.js stack.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a href="#contact" className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-fuchsia-600 px-5 py-3 text-white shadow-lg shadow-indigo-600/20 transition active:scale-[.98]">
-              Start your project <ArrowRight className="h-4 w-4 transition -translate-x-0 group-hover:translate-x-0.5" />
+            <a href="#contact" className="group inline-flex items-center gap-2 rounded-xl bg-linear-to-r from-indigo-600 to-fuchsia-600 px-5 py-3 text-white shadow-lg shadow-indigo-600/20 transition active:scale-[.98]">
+              Start your project <ArrowRight className="h-4 w-4 transition --translate-x-0 group-hover:translate-x-0.5" />
             </a>
             <a href="#work" className="inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-5 py-3 text-gray-800 shadow-sm hover:bg-gray-50 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-100">
               View work
@@ -130,7 +127,7 @@ function Hero() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="order-1 lg:order-2 lg:col-span-6"
         >
-          <div className="relative mx-auto aspect-[4/3] w-full max-w-2xl overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-8 shadow-xl">
+          <div className="relative mx-auto aspect-4/3 w-full max-w-2xl overflow-hidden rounded-3xl border border-white/10 bg-linear-to-br from-gray-900 via-gray-800 to-gray-900 p-8 shadow-xl">
             <MockBrowser>
               <div className="grid gap-3 sm:grid-cols-2">
                 <Tile title="Next.js SSR" icon={Rocket}>
@@ -170,9 +167,9 @@ function MockBrowser({ children }: { children: React.ReactNode }) {
 
 function Tile({ title, icon: Icon, children }: { title: string; icon: any; children: React.ReactNode }) {
   return (
-    <div className="group rounded-2xl border border-gray-800 bg-gradient-to-b from-gray-900/80 to-gray-900/40 p-4 shadow-inner transition hover:border-indigo-600/50">
+    <div className="group rounded-2xl border border-gray-800 bg-linear-to-b from-gray-900/80 to-gray-900/40 p-4 shadow-inner transition hover:border-indigo-600/50">
       <div className="flex items-center gap-2">
-        <div className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-indigo-600/80 to-fuchsia-600/80 text-white">
+        <div className="grid h-9 w-9 place-items-center rounded-xl bg-linear-to-br from-indigo-600/80 to-fuchsia-600/80 text-white">
           <Icon className="h-5 w-5" />
         </div>
         <h3 className="font-semibold">{title}</h3>
@@ -243,7 +240,7 @@ function Services() {
             className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900"
           >
             <div className="flex items-center gap-3">
-              <div className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-indigo-600 to-fuchsia-600 text-white">
+              <div className="grid h-11 w-11 place-items-center rounded-2xl bg-linear-to-br from-indigo-600 to-fuchsia-600 text-white">
                 <s.icon className="h-5 w-5" />
               </div>
               <h3 className="text-lg font-semibold">{s.title}</h3>
@@ -290,7 +287,7 @@ function Work() {
             transition={{ duration: 0.45 }}
             className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md dark:border-gray-800 dark:bg-gray-900"
           >
-            <div className="aspect-[4/3] w-full rounded-2xl bg-gradient-to-br from-indigo-600/15 to-fuchsia-600/15" />
+            <div className="aspect-4/3 w-full rounded-2xl bg-linear-to-br from-indigo-600/15 to-fuchsia-600/15" />
             <div className="mt-4">
               <div className="text-xs text-indigo-600">{item.tag}</div>
               <h3 className="mt-1 text-lg font-semibold">{item.title}</h3>
@@ -321,7 +318,7 @@ function Process() {
       <ol className="mx-auto mt-10 grid max-w-3xl gap-6 sm:grid-cols-2">
         {steps.map((s, i) => (
           <li key={s.title} className="relative rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900">
-            <div className="absolute -left-3 -top-3 grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-indigo-600 to-fuchsia-600 text-white shadow-md">
+            <div className="absolute -left-3 -top-3 grid h-10 w-10 place-items-center rounded-xl bg-linear-to-br from-indigo-600 to-fuchsia-600 text-white shadow-md">
               {i + 1}
             </div>
             <div className="flex items-center gap-2">
@@ -375,7 +372,7 @@ function Testimonials() {
 function CTA() {
   return (
     <section className="mx-auto max-w-7xl px-4 pb-6 sm:px-6">
-      <div className="relative overflow-hidden rounded-3xl border border-indigo-500/20 bg-gradient-to-br from-indigo-600 to-fuchsia-600 p-8 text-white shadow-xl">
+      <div className="relative overflow-hidden rounded-3xl border border-indigo-500/20 bg-linear-to-br from-indigo-600 to-fuchsia-600 p-8 text-white shadow-xl">
         <div className="absolute right-0 top-0 -mr-6 -mt-6 h-32 w-32 rounded-full bg-white/10 blur-2xl" />
         <div className="grid items-center gap-6 md:grid-cols-2">
           <div>
@@ -485,7 +482,7 @@ function Footer() {
     <footer className="mt-8 border-t border-gray-200 py-10 dark:border-gray-800">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 sm:flex-row sm:px-6">
         <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-          <div className="grid h-7 w-7 place-items-center rounded-lg bg-gradient-to-br from-indigo-600 to-fuchsia-600 text-white">
+          <div className="grid h-7 w-7 place-items-center rounded-lg bg-linear-to-br from-indigo-600 to-fuchsia-600 text-white">
             <Code2 className="h-4 w-4" />
           </div>
           <span>© {new Date().getFullYear()} NovaWeb. All rights reserved.</span>
